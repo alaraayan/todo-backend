@@ -21,12 +21,12 @@ class TodoListView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-class TodoDetailView(APIView):
+# class TodoDetailView(APIView):
     # def get_todo(self, pk):
     #     try:
     #         return Todo.objects.get(pk=pk)
     #     except Todo.DoesNotExist:
     #         raise NotFound()
     #! DELETE A TODO
-    def delete(self, _request)
+        # def delete(self, _request)
     #! EDIT A TODO
