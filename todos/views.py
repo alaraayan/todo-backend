@@ -24,9 +24,11 @@ class TodoListView(APIView):
     #!GET ALL TODOS
     def get(self, request):
         todos = Todo.objects.all()
+        
         serialized_todos = PopulatedTodoSerializer(todos, many=True)
+        
         def check_owner(todo_item):
-            # print('🍇', todo_item, todo_item['owner']['id'])
+            
             if todo_item['owner']['id'] == request.user.id:
                 return True
             return False
