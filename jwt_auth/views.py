@@ -27,11 +27,11 @@ class RegisterView(APIView):
 class LoginView(APIView):
 
     def post(self, request):
-        username = request.data.get('username')
+        email = request.data.get('email')
         password = request.data.get('password')
 
         try:
-            user_to_login = User.objects.get(username=username)
+            user_to_login = User.objects.get(email=email)
         except User.DoesNotExist:
             raise PermissionDenied(detail='Unauthorized')
 
@@ -47,5 +47,5 @@ class LoginView(APIView):
 
         return Response({
             'token': token,
-            'message': f'Welcome back {username}'
+            'message': f'Welcome back {user_to_login.username}'
         }, status=status.HTTP_200_OK)
