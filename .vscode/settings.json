@@ -1,0 +1,73 @@
+{
+  "python.pythonPath": "/Users/alaraayan/.local/share/virtualenvs/server-Z8-dP55z/bin/python",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#82a3ff",
+    "titleBar.activeBackground": "#82a3ff",
+    "titleBar.inactiveBackground": "#82a3ff99",
+    "statusBar.foreground": "#15202b",
+    "titleBar.inactiveForeground": "#15202b99",
+    "titleBar.activeForeground": "#15202b",
+    "activityBar.activeBackground": "#b5c9ff",
+    "activityBar.activeBorder": "#ff4073",
+    "activityBar.background": "#b5c9ff",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#ff4073",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#4f7dff"
+  },
+  "editor.tokenColorCustomizations": {
+    "[Monokai Dimmed]": {
+        "comments": "#d3934b",
+    }
+},  
+"better-comments.tags": [
+
+  {
+    "tag": "!",
+    "color": "#4f7dff",
+    "strikethrough": false,
+    "underline": false,
+    "backgroundColor": "transparent",
+    "bold": true,
+    "italic": false
+  },
+  {
+    "tag": "?",
+    "color": "#407cb4",
+    "strikethrough": false,
+    "underline": false,
+    "backgroundColor": "transparent",
+    "bold": false,
+    "italic": false
+  },
+  {
+    "tag": "//",
+    "color": "#474747",
+    "strikethrough": true,
+    "underline": false,
+    "backgroundColor": "transparent",
+    "bold": false,
+    "italic": false
+  },
+  {
+    "tag": "todo",
+    "color": "#e98c8c",
+    "strikethrough": false,
+    "underline": false,
+    "backgroundColor": "transparent",
+    "bold": false,
+    "italic": false
+  },
+  {
+    "tag": "*",
+    "color": "#76aa9f",
+    "strikethrough": false,
+    "underline": true,
+    "backgroundColor": "transparent",
+    "bold": false,
+    "italic": false
+  }
+],
+"peacock.color": "#82A3FF",
+}
