@@ -3,28 +3,42 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.exceptions import NotFound
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
+
 
 from .models import Todo
 from .serializers import TodoSerializer, PopulatedTodoSerializer
 
-# GET ALL AND CREATE NEW
+#GET ALL AND CREATE NEW
 class TodoListView(APIView):
-    #!GET ALL TODOS
-    def get(self, _request):
-        todos = Todo.objects.all()
-        serializer = PopulatedTodoSerializer(todos, many=True)
-
-        return Response(serializer.data, status=status.HTTP_200_OK)
+    permission_classes = (IsAuthenticated, )
     #! CREATE A NEW TODO
     def post(self, request):
-        request.data['owner'] = request.user.id
+        
         new_todo = TodoSerializer(data=request.data)
+        request.data['owner'] = request.user.id
         if new_todo.is_valid():
             new_todo.save()
             return Response(new_todo.data, status=status.HTTP_201_CREATED)
         return Response(new_todo.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+    #!GET ALL TODOS
+    def get(self, request):
+        todos = Todo.objects.all()
+        serialized_todos = PopulatedTodoSerializer(todos, many=True)
+        def check_owner(todo_item):
+            # print('🍇', todo_item, todo_item['owner']['id'])
+            if todo_item['owner']['id'] == request.user.id:
+                return True
+            return False
+        filtered_todos = list(filter(check_owner, serialized_todos.data))
+        
+        return Response(filtered_todos, status=status.HTTP_200_OK)
 
+    
+
+#SHOW, DELETE AND UPDATE ONE
 class TodoDetailView(APIView):
+    permission_classes = (IsAuthenticated, )
     # ! GET A SINGLE TODO
     def get_todo(self, pk):
         try:
