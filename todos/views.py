@@ -33,7 +33,6 @@ class TodoListView(APIView):
         filtered_todos = list(filter(check_owner, serialized_todos.data))
         
         return Response(filtered_todos, status=status.HTTP_200_OK)
-
     
 
 #SHOW, DELETE AND UPDATE ONE
