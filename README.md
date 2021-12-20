@@ -58,6 +58,5 @@ To access the frontend repository please [click here.](https://github.com/alaraa
 
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 [Favicon license](https://creativecommons.org/licenses/by/3.0/)
