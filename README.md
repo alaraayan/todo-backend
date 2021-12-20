@@ -1,6 +1,6 @@
 # <img src="images/favicon.ico" alt="logo" style="height:30px; width:30px"/> Star Wars themed simple to-do list | Full-stack app | Personal project
 
-[Live demo](https://ga-zenith.netlify.app/)
+[Live demo](todo-app-sw.netlify.app/)
 
 ## Getting Started
 - Clone or download the repo
