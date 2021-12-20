@@ -81,7 +81,7 @@ DATABASES = {}
 if str(os.getenv('ENVIRONMENT')) == 'development':
     DATABASES['default'] =  {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'name-of-your-db', # < --- make sure you chage this
+        'NAME': 'todo-app-db', # < --- make sure you chage this
         'HOST': 'localhost',
         'PORT': 5432
     }
